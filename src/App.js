@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "./components/navbar/NavBar";
 import GlobalStyles from "./styles/Global";
+import Slideshow from './components/slideshow/SlideShow';
 
 class App extends Component {
 
@@ -20,6 +21,7 @@ class App extends Component {
           navbarState={this.state.navbarOpen}
           handleNavbar={this.handleNavbar}
         />
+        <Slideshow />
         <GlobalStyles />
       </>
     );

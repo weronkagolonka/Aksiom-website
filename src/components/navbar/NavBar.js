@@ -29,7 +29,6 @@ const NavBar = (props) => {
                         <a href="/">kontakt</a>
                         <a href="/">przydatne linki</a>
                     </NavLinks>
-                    <p>Testuje</p>
                 </FlexContainer>
             </Navbar>
         </>
@@ -55,6 +54,7 @@ const FlexContainer = styled.div`
     paddig: 0 2rem;
     justify-content: space-between;
     height: 8.5rem;
+    color: blue;
 `;
 
 const NavLinks = styled(animated.ul)`
