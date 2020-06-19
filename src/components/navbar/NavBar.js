@@ -24,11 +24,12 @@ const NavBar = (props) => {
                 <FlexContainer>
                     <Brand />
                     <NavLinks style={linkAnimation}>
-                        <a href="/">link n1</a>
-                        <a href="/">link n2</a>
-                        <a href="/">link n3</a>
-                        <a href="/">link n4</a>
+                        <a href="/">oferta</a>
+                        <a href="/">o nas</a>
+                        <a href="/">kontakt</a>
+                        <a href="/">przydatne linki</a>
                     </NavLinks>
+                    <p>Testuje</p>
                 </FlexContainer>
             </Navbar>
         </>
