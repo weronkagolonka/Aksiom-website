@@ -11,6 +11,6 @@ const Brand = () => {
 export default Brand
 
 const Image = styled.img`
-    height: 80%;
+    height: 50%;
     margin: auto 0;
 `;

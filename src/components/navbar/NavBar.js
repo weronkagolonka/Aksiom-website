@@ -76,8 +76,6 @@ const Menu = styled.ul`
     width: 100px;
 `;
 
-
-
 const MenuLink = styled.a`
     border-bottom: 1px solid #000;
     color: #000;
@@ -86,7 +84,6 @@ const MenuLink = styled.a`
     font-family: 'Source Sans Pro';
     font-weight: normal;
     text-transform: none;
-
 `;
 
 const MenuItem = styled.li`
@@ -105,24 +102,22 @@ const Navbar = styled(animated.nav)`
     left: 0;
     background: #ffffff;
     z-index: 1;
-    font-size: 1.4rem;
+    font-size: 1rem;
 `;
 
 const FlexContainer = styled.div`
     max-width: 120rem;
     display: flex;
     margin: auto;
-    paddig: 0 2rem;
+    padding: 0 3rem;
     justify-content: space-between;
-    height: 8.5rem;
-    color: blue;
+    height: 6.5rem;
 `;
 
 const NavLinks = styled(animated.ul)`
     justify-self: end;
     list-style-type: none;
     margin: auto 0;
-
 `;
 
 const NavItem = styled.li`

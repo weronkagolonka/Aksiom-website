@@ -1,70 +1,58 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Slide } from 'react-slideshow-image';
 import katowice from '../../images/katowice.jpg';
-import work from '../../images/work.jpg';
-import electrician from '../../images/electrician.jpg';
+import { useSpring, animated, config } from "react-spring";
 
-const slideImages = [
-    katowice,
-    work,
-    electrician
-];
-
-const properties = {
-    duration: 5000,
-    transitionDuration: 500,
-    infinite: true,
-    indicators: false,
-    arrows: true,
-    pauseOnHover: true,
-    onChange: (oldIndex, newIndex) => {
-        console.log(`slide transition from ${oldIndex} to ${newIndex}`);
-    }
-}
 
 const Slideshow = () => {
-
+    const slideAnimation = useSpring({
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+        delay: 150,
+        config: config.gentle,
+    });
 
     return (
-        <SlideContainer>
-            <Slide {...properties}>
-                <div className="each-slide">
-                    <div style={{
-                        'backgroundImage': `url(${slideImages[0]})`,
-                        'height': '450px',
-                        'width': '1440px',
-                        'backgroundPosition': 'center',
-                        'backgroundSize': 'cover',
-                    }}>
-                        <span>Slide 1</span>
-                    </div>
-                </div>
-                <div className="each-slide">
-                    <div style={{
-                        'backgroundImage': `url(${slideImages[1]})`,
-                        'height': '450px',
-                        'width': '1440px',
-                        'backgroundPosition': 'center',
-                        'backgroundSize': 'cover',
-                    }}>
-                        <span>Slide 2</span>
-                    </div>
-                </div>
-                <div className="each-slide">
-                    <div style={{ 'backgroundImage': `url(${slideImages[2]})`, 'height': '400px' }}>
-                        <span>Slide 3</span>
-                    </div>
-                </div>
-            </Slide>
+        <SlideContainer style={slideAnimation}>
+            <div style={{
+                'backgroundImage': `url(${katowice})`,
+                'height': '450px',
+                'width': '1440px',
+                'backgroundPosition': 'center',
+                'backgroundSize': 'cover',
+            }}>
+                <TextBox>
+                    <TitleSlide>Profesjonalne usługi księgowe</TitleSlide>
+                    <SubtitleSlide>lorem</SubtitleSlide>
+                </TextBox>
+
+            </div>
         </SlideContainer>
     )
 }
 
 export default Slideshow
 
-const SlideContainer = styled.div`
-    margin: 8.5rem auto;
-    height: 40%;
-    width: 100%;
+const SlideContainer = styled(animated.div)`
+    
 `;
+
+const TextBox = styled.div`
+   margin: 6.5rem auto;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+`;
+
+const TitleSlide = styled.h1`
+    text-align: center;
+    color: white;
+`;
+
+const SubtitleSlide = styled.p`
+    text-align: center;
+    color: white;
+`; 

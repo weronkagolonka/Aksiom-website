@@ -23,22 +23,31 @@ const GlobalStyles = createGlobalStyle`
     }
 
     html {
-        font-size: 70%
+        height: 100%;
     }
 
     body {
         box-sizing: border-box;
-        font-family: 'Nunito';
+        font-family: 'Nunito', sans-serif;
+        height: 100%;
+    }
+
+    h1 {
+        box-sizing: border-box;
+        font-family: 'Nunito', sans-serif;
+        font-size: 2.5rem;
     }
 
     p {
         box-sizing: border-box;
-        font-family: 'Source Sans Pro';
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 1.25rem;
+        font-weight: normal;
     }
 
     button {
         box-sizing: border-box;
-        font-family: 'Nunito';
+        font-family: 'Nunito', sans-serif;
         font-weight: bold;
     }
 

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NavBar from "./components/navbar/NavBar";
 import GlobalStyles from "./styles/Global";
 import Slideshow from './components/slideshow/SlideShow';
+import Info from './components/Info';
 
 class App extends Component {
 
@@ -22,6 +23,7 @@ class App extends Component {
           handleNavbar={this.handleNavbar}
         />
         <Slideshow />
+        <Info />
         <GlobalStyles />
       </>
     );
