@@ -4,7 +4,6 @@ import { Slide } from 'react-slideshow-image';
 import katowice from '../../images/katowice.jpg';
 import work from '../../images/work.jpg';
 import electrician from '../../images/electrician.jpg';
-import { useSpring, animated, config } from "react-spring";
 
 const slideImages = [
     katowice,
@@ -25,10 +24,7 @@ const properties = {
 }
 
 const Slideshow = () => {
-    const sliderAnimation = useSpring({
-        from: { transform: 'translate3d(0, -10rem, 0)' },
-        transform: 'translate3d(0, 0, 0)',
-    });
+
 
     return (
         <SlideContainer>

@@ -36,6 +36,12 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Source Sans Pro';
     }
 
+    button {
+        box-sizing: border-box;
+        font-family: 'Nunito';
+        font-weight: bold;
+    }
+
 `;
 
 export default GlobalStyles;
