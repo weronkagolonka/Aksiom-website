@@ -13,17 +13,17 @@ const Slideshow = () => {
     });
 
     return (
-        <SlideContainer style={slideAnimation}>
+        <SlideContainer>
             <div style={{
                 'backgroundImage': `url(${katowice})`,
-                'height': '450px',
+                'height': '560px',
                 'width': '1440px',
                 'backgroundPosition': 'center',
                 'backgroundSize': 'cover',
             }}>
                 <TextBox>
                     <TitleSlide>Profesjonalne usługi księgowe</TitleSlide>
-                    <SubtitleSlide>lorem</SubtitleSlide>
+                    <SubtitleSlide>Lokalnie. Na Śląsku.</SubtitleSlide>
                 </TextBox>
 
             </div>

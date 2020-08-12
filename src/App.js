@@ -3,7 +3,8 @@ import NavBar from "./components/navbar/NavBar";
 import GlobalStyles from "./styles/Global";
 import Slideshow from './components/slideshow/SlideShow';
 import Info from './components/Info';
-import About from './components/About'
+import About from './components/About';
+import Services from './components/Services';
 
 class App extends Component {
 
@@ -26,6 +27,7 @@ class App extends Component {
         <Slideshow />
         <Info />
         <About />
+        <Services />
         <GlobalStyles />
       </>
     );

@@ -1,16 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
 import placeholder from '../images/placeholder.jpg';
+import emoji from '../images/emoji.jpg';
 
 const About = () => {
     return (
-        <AboutBox>
-            <PicContainer />
-            <Spacer />
-            <TextContainer>
-                <p>Etiam volutpat dui ac ligula cursus vehicula. Maecenas velit massa, ornare at sapien in, fringilla porttitor mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et lorem eget magna dignissim dignissim. Maecenas neque nunc, ornare eget faucibus vel, semper ac elit. Nulla lectus lacus, faucibus a ligula nec, euismod egestas nisi. Aliquam erat volutpat. Donec et volutpat nulla. Integer placerat cursus massa vitae ullamcorper. Curabitur lobortis sapien fermentum velit tincidunt, a tristique metus condimentum. Sed laoreet elementum nisi a eleifend. Vivamus leo mauris, sollicitudin ac arcu ut, mollis dapibus orci. Suspendisse malesuada dolor mauris, vitae pellentesque nisi dictum vitae. Suspendisse ipsum velit, scelerisque sit amet turpis aliquet, facilisis commodo dolor. In ac libero dolor.</p>
-            </TextContainer>
-        </AboutBox>
+        <div>
+            <TitleBox>
+                <Title>
+                    O nas
+                </Title>
+            </TitleBox>
+            <AboutBox>
+                <PicContainer />
+                <Spacer />
+                <TextContainer>
+                    <AboutText>
+                        Pracuję z polskimi oraz zagranicznymi przedsiębiorcami już od ponad dziesięciu lat.
+                        Ukończyłam studia magisterskie z Zarządzania Przedsiębiorstwem na Politechnice Radomskiej im. Kazimierza Pułaskiego
+                        oraz studia podyplomowe z Rachunkowości na Wyższej Szkole Humanitas w Sosnowcu.
+                        Oprócz tego regularnie podnoszę swoje kwalifikacje poprzez uczestnictwo w kursach oraz szkoleniach
+                        dotyczących między innymi zmian w podatkach, profesjonalnej obsługi klienta, zasad pomocy publicznej przed i po wstąpieniu do Unii Europejskiej oraz doradztwa podatkowego.
+                        Podczas mojej kariery zawodowej miałam okazję szlifować swoje umiejętności zarówno jako członek zespołów księgowych,
+                        jak i ich kierownik. Cały ten bagaż doświadczeń sprawia, iż doskonale rozumiem jak zróżnicowane potrafią być potrzeby
+                        dzisiejszych przedsiębiorców.
+                    <br></br>
+                        <br></br>
+                    Nasze biuro jest lokalne, ale prężnie rozwijające się. Profesjonalizm i indywidualne podejście jest dla nas priorytetem. Jeżeli szukasz rzetelnego księgowego, który bezpiecznie poprowadzi Twoją działalność i w ludzki sposób wytłumaczy zawiłości polskiego systemu podatkowego, jesteś w dobrym miejscu.
+                </AboutText>
+                    <BossBox>
+                        <Boss>
+                            Anna Łukaszek<br></br> Prezes Zarządu
+                    </Boss>
+                    </BossBox>
+
+                </TextContainer>
+            </AboutBox>
+        </div>
     );
 }
 
@@ -19,6 +45,7 @@ export default About
 const AboutBox = styled.div`
     padding-left: 48px;
     padding-right: 48px;
+    padding-top: 48px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -28,10 +55,11 @@ const AboutBox = styled.div`
 
 const PicContainer = styled.div`
     order: 1;
-    width: 30%;
-    background-image: url(${placeholder});
-    background-position: center;
-    background-size: cover;
+    width: 40%;
+    background-image: url(${emoji});
+    background-position: center top;
+    background-size: auto;
+    background-repeat: no-repeat;
 `;
 
 const TextContainer = styled.div`
@@ -40,12 +68,37 @@ const TextContainer = styled.div`
     justify-content: center;
     align-items: center;
     order: 3;
-    width: 40%;
+    width: 60%;
 `;
 
 const Spacer = styled.div`
     order: 2;
-    width: 20%;
+    width: 10%;
+`;
+
+const AboutText = styled.p`
+    text-align: justify;
+    line-height: 1.5;
+`;
+
+const TitleBox = styled.div`
+    width: 100%;
+    align-content: center;
+`;
+
+const Title = styled.h1`
+    text-align: center;
+`;
+
+const BossBox = styled.div`
+    padding-top: 30px;
+    width: 100%;
+    align-content: right;
+`;
+
+const Boss = styled.p`
+    text-align: right;
+    font-weight: bold;
 `;
 
 

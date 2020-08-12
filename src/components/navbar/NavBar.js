@@ -47,19 +47,20 @@ const NavBar = (props) => {
 }
 
 const HooverMenu = () => {
+
     return (
         <Menu>
             <MenuItem>
-                <MenuLink href="/">oferta 1</MenuLink>
+                <MenuLink href="/">Ryczałt od przychodów ewidencjonalnych</MenuLink>
             </MenuItem>
             <MenuItem>
-                <MenuLink href="/">oferta 2</MenuLink>
+                <MenuLink href="/">Podatkowa książka przychodów i rozchodów</MenuLink>
             </MenuItem>
             <MenuItem>
-                <MenuLink href="/">oferta 3</MenuLink>
+                <MenuLink href="/">Księgi handlowe</MenuLink>
             </MenuItem>
             <MenuItem>
-                <MenuLink href="/">oferta 4</MenuLink>
+                <MenuLink href="/">Kadry i płace</MenuLink>
             </MenuItem>
         </Menu>
     );
@@ -72,8 +73,13 @@ const Menu = styled.ul`
     list-style-type: none;
     display: none;
     position: absolute;
+    top: 30px;
+    left: 30px;
     background-color: #fff;
-    width: 100px;
+    width: 350px;
+    padding-top: 30px;
+    border-radius: 25px;
+    box-shadow: -10px 10px #D5992E;
 `;
 
 const MenuLink = styled.a`
@@ -87,10 +93,10 @@ const MenuLink = styled.a`
 `;
 
 const MenuItem = styled.li`
-    
-    padding: 1.5rem 1rem 1rem 0.5rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
     &:hover ${MenuLink} {
-        border-bottom: 1px solid black;
+        font-weight: bold;
     }
 `;
 
@@ -120,6 +126,11 @@ const NavLinks = styled(animated.ul)`
     margin: auto 0;
 `;
 
+const NLink = styled.a`
+    color: #000;
+    text-decoration: none;
+`;
+
 const NavItem = styled.li`
     text-transform: uppercase;
     font-weight: 700;
@@ -131,11 +142,11 @@ const NavItem = styled.li`
     &:hover ${Menu} {
         display: block;
     }
+    &:hover ${NLink} {
+        color: #D5992E;
+    }
 `;
 
-const NLink = styled.a`
-    color: #000;
-    text-decoration: none;
-`;
+
 
 
