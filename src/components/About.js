@@ -5,7 +5,7 @@ import emoji from '../images/emoji.jpg';
 
 const About = () => {
     return (
-        <div>
+        <div style={{ 'margin-bottom': '48px', }}>
             <TitleBox>
                 <Title>
                     O nas

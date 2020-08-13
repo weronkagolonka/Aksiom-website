@@ -5,6 +5,7 @@ import Slideshow from './components/slideshow/SlideShow';
 import Info from './components/Info';
 import About from './components/About';
 import Services from './components/Services';
+import References from './components/References';
 
 class App extends Component {
 
@@ -28,6 +29,7 @@ class App extends Component {
         <Info />
         <About />
         <Services />
+        <References />
         <GlobalStyles />
       </>
     );

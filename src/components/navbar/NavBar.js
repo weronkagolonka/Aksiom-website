@@ -73,12 +73,14 @@ const Menu = styled.ul`
     list-style-type: none;
     display: none;
     position: absolute;
-    top: 30px;
+    top: 80%;
     left: 30px;
     background-color: #fff;
     width: 350px;
-    padding-top: 30px;
+    padding-top: 25px;
+    padding-bottom: 10px;
     border-radius: 25px;
+    border: 3px solid #D5992E;
     box-shadow: -10px 10px #D5992E;
 `;
 
@@ -95,6 +97,7 @@ const MenuLink = styled.a`
 const MenuItem = styled.li`
     padding-left: 1rem;
     padding-bottom: 1rem;
+    text-align: left;
     &:hover ${MenuLink} {
         font-weight: bold;
     }
@@ -121,6 +124,8 @@ const FlexContainer = styled.div`
 `;
 
 const NavLinks = styled(animated.ul)`
+    display: flex;
+    height: 100%;
     justify-self: end;
     list-style-type: none;
     margin: auto 0;
@@ -132,13 +137,15 @@ const NLink = styled.a`
 `;
 
 const NavItem = styled.li`
+    height: 100%;
     text-transform: uppercase;
     font-weight: 700;
-    border-bottom: 1px solid transparent
+    border: none;
     transition: all 300ms linear 0s;
     cursor: pointer;
     display: inline-block;
-    padding: 0 0 0 3rem;
+    padding-top: 2.5rem;
+    padding-left: 3rem;
     &:hover ${Menu} {
         display: block;
     }
