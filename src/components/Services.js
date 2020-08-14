@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 
-const Services = () => {
+const Services = React.forwardRef((props, ref) => {
+
     return (
         <Background>
             <Title>
@@ -9,7 +10,7 @@ const Services = () => {
             </Title>
             <MainBox>
                 <Row>
-                    <Box>
+                    <Box ref={ref}>
                         <Subtitle>Ryczałt od przychodów ewidencjonowanych</Subtitle>
                     </Box>
                     <ServiceListRight>
@@ -78,12 +79,14 @@ const Services = () => {
         </Background>
 
     );
-}
+})
 
 export default Services
 
+//E5B523
+
 const Background = styled.div`
-    background-color: #E5B523;
+    background-color: #f8f8f8;
     padding-top: 48px;
     padding-bottom: 48px;
 `;
@@ -99,7 +102,7 @@ const MainBox = styled.div`
 
 const Title = styled.h1`
     text-align: center;
-    color: #fff;
+    color: #000;
     margin-top: 36px;
     padding-bottom: 48px;
 `;
@@ -147,7 +150,8 @@ const ServiceListRight = styled.ul`
 const ListItem = styled.li`
     text-align: left;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding:10px;
-    color: #fff;
+    margin-right: 48px;
+    color: #000;
 `;

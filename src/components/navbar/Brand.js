@@ -4,7 +4,7 @@ import logo from '../../assets/logo-website-yellow.png';
 
 const Brand = () => {
     return (
-        <Image src={logo} alt="Company-logo" />
+        <Image onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} src={logo} alt="Company-logo" />
     )
 }
 

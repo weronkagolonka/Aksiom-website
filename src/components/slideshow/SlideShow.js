@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import katowice from '../../images/katowice.jpg';
+import katowice2 from '../../images/katowice_2.jpg';
 import { useSpring, animated, config } from "react-spring";
 
 

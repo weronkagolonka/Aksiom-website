@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import placeholder from '../images/placeholder.jpg';
 import emoji from '../images/emoji.jpg';
 
-const About = () => {
+const About = React.forwardRef((props, ref) => {
     return (
-        <div style={{ 'margin-bottom': '48px', }}>
+        <div style={{ 'marginBottom': '48px', }} ref={ref}>
             <TitleBox>
                 <Title>
                     O nas
@@ -38,7 +38,7 @@ const About = () => {
             </AboutBox>
         </div>
     );
-}
+})
 
 export default About
 

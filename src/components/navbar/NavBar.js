@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
-
 import { FaAngleDown } from 'react-icons/fa';
 
 import { useSpring, animated, config } from "react-spring";
-
 import Brand from './Brand';
 
 const NavBar = (props) => {
+
+    const { goTo } = props
+
     const barAnimation = useSpring({
         from: { transform: 'translate3d(0, -10rem, 0)' },
         transform: 'translate3d(0, 0, 0)',
@@ -20,6 +21,26 @@ const NavBar = (props) => {
         config: config.wobbly,
     });
 
+    const HooverMenu = () => {
+
+        return (
+            <Menu>
+                <MenuItem onClick={() => goTo('services1')}>
+                    <MenuLink>Ryczałt od przychodów ewidencjonalnych</MenuLink>
+                </MenuItem>
+                <MenuItem onClick={() => goTo('services2')}>
+                    <MenuLink>Podatkowa książka przychodów i rozchodów</MenuLink>
+                </MenuItem>
+                <MenuItem onClick={() => goTo('services3')}>
+                    <MenuLink>Księgi handlowe</MenuLink>
+                </MenuItem>
+                <MenuItem>
+                    <MenuLink onClick={() => goTo('services4')}>Kadry i płace</MenuLink>
+                </MenuItem>
+            </Menu>
+        );
+    }
+
     return (
         <>
             <Navbar style={barAnimation}>
@@ -27,11 +48,11 @@ const NavBar = (props) => {
                     <Brand />
                     <NavLinks style={linkAnimation}>
                         <NavItem>
-                            <NLink href="/">oferta <FaAngleDown /></NLink>
+                            <NLink>oferta <FaAngleDown /></NLink>
                             <HooverMenu />
                         </NavItem>
                         <NavItem>
-                            <NLink href="/">o nas</NLink>
+                            <NLink onClick={() => goTo('about')}>o nas</NLink>
                         </NavItem>
                         <NavItem>
                             <NLink href="/">kontakt</NLink>
@@ -46,25 +67,7 @@ const NavBar = (props) => {
     );
 }
 
-const HooverMenu = () => {
 
-    return (
-        <Menu>
-            <MenuItem>
-                <MenuLink href="/">Ryczałt od przychodów ewidencjonalnych</MenuLink>
-            </MenuItem>
-            <MenuItem>
-                <MenuLink href="/">Podatkowa książka przychodów i rozchodów</MenuLink>
-            </MenuItem>
-            <MenuItem>
-                <MenuLink href="/">Księgi handlowe</MenuLink>
-            </MenuItem>
-            <MenuItem>
-                <MenuLink href="/">Kadry i płace</MenuLink>
-            </MenuItem>
-        </Menu>
-    );
-}
 
 export default NavBar
 

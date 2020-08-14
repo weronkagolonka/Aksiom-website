@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
-
 
 const Info = () => {
     return (
-        <InfoBox>
+        <InfoBox >
             <InfoTitle>Kompleksowa obsługa Twojego przedsiębiorstwa</InfoTitle>
             <InfoSubtitle>
                 Jednoosobowa działalność gospodarcza czy może spółka cywilna?
                 Wraz z długoletnim doświadczeniem  w prowadzeniu działalności księgowo-doradczej
                 potrafimy odpowiedzieć na potrzeby każdej firmy - niezależnie od jej złożoności, specyfiki czy też reprezentowanej branży.
-                Świadczone przez nas usługi są zawsze dostosowywane indywidualnie z zachowaniem najwyższych standardów obsługi klienta. Służymy także pomocą osobom chcącym dopiero rozpocząć swoją działalność gospodarczą oraz firmom stawiającym pierwsze kroki na rynku. Dzięki współpracy z naszym biurem rachunkowym, możesz skupić się na prowadzeniu firmy, a obsługę księgową pozostawić nam.
+                Świadczone przez nas usługi są zawsze dostosowywane indywidualnie z zachowaniem najwyższych standardów obsługi klienta.
+                Służymy także pomocą osobom chcącym dopiero rozpocząć swoją działalność gospodarczą oraz firmom stawiającym pierwsze kroki na rynku.
+                Dzięki współpracy z naszym biurem rachunkowym, możesz skupić się na swoim biznesie, a obsługę księgową pozostawić nam.
             </InfoSubtitle>
         </InfoBox>
     );
@@ -24,6 +25,8 @@ const InfoBox = styled.div`
     padding-bottom: 6rem;
 `;
 
+export { InfoBox }
+
 const InfoTitle = styled.h1`
     text-align: center;
 `;
@@ -31,7 +34,8 @@ const InfoTitle = styled.h1`
 const InfoSubtitle = styled.p`
     margin: 48px;
     margin-bottom: 0px;
-    text-align: center;
+    text-align: justify;
+    text-align-last: center;
     line-height: 1.666;
 `;
 
