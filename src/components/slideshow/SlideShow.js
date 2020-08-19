@@ -1,17 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import katowice from '../../images/katowice.jpg';
-import katowice2 from '../../images/katowice_2.jpg';
-import { useSpring, animated, config } from "react-spring";
+import { animated } from "react-spring";
 
 
 const Slideshow = () => {
+    /*
     const slideAnimation = useSpring({
         from: { opacity: 0 },
         to: { opacity: 1 },
         delay: 150,
         config: config.gentle,
     });
+    */
 
     return (
         <SlideContainer>

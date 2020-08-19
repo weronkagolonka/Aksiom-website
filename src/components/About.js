@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import placeholder from '../images/placeholder.jpg';
 import emoji from '../images/emoji.jpg';
 
 const About = React.forwardRef((props, ref) => {

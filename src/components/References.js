@@ -1,17 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Slide } from 'react-slideshow-image';
-import { useSpring, animated, config } from "react-spring";
-
-const slideImages = [];
 
 const References = () => {
+    /*
     const slideAnimation = useSpring({
         from: { opacity: 0 },
         to: { opacity: 1 },
         delay: 150,
         config: config.gentle,
     });
+    */
 
     return (
         <div>

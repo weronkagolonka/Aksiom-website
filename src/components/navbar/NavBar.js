@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { FaAngleDown } from 'react-icons/fa';
 
@@ -55,7 +55,7 @@ const NavBar = (props) => {
                             <NLink onClick={() => goTo('about')}>o nas</NLink>
                         </NavItem>
                         <NavItem>
-                            <NLink href="/">kontakt</NLink>
+                            <NLink onClick={() => goTo('contact')}>kontakt</NLink>
                         </NavItem>
                         <NavItem>
                             <NLink href="/">przydatne linki</NLink>
