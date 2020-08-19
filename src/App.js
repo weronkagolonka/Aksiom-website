@@ -7,8 +7,8 @@ import About from './components/About';
 import Services from './components/Services';
 import References from './components/References';
 import Contact from './components/Contact';
-
-
+import emailjs from 'emailjs-com';
+import toast from 'emailjs-com';
 //http://www.tax.pl/index.php?route=information/information&information_id=11
 class App extends Component {
 
@@ -43,7 +43,31 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
+    if (this.state.email !== '' && this.state.message !== '') {
+      const templateParams = {
+        from_name: this.state.name,
+        from_email: this.state.email,
+        to_name: "biuro@aksiom.pl",
+        feedback: this.state.message
+      }
+
+      emailjs.send("smtp_server", "template_e9rRRQAR", templateParams, "user_X6ewtT8WAJbK1P5EqLmm0").then(
+        (result) => {
+          console.log(result.text);
+        }, (error) => {
+          console.log(error.text);
+        }
+      );
+
+      alert("Wiadomość wysłana");
+      this.resetForm();
+    } else {
+      alert("Niekompletny formularz");
+    }
+  }
+
+  resetForm() {
+    this.setState({ name: '', email: '', message: '' });
   }
 
   scrollToContent(content) {
@@ -79,7 +103,7 @@ class App extends Component {
         <About ref={this.aboutSection} />
         <Services ref={this.servicesSection} />
         <References />
-        <Contact ref={this.contactSection} submit={this.handleSubmit} setName={this.onNameChange} setEmail={this.onEmailChange} setMessage={this.onMessageChange} />
+        <Contact ref={this.contactSection} submit={this.handleSubmit} setName={this.onNameChange} setEmail={this.onEmailChange} setMessage={this.onMessageChange} state={this.state} />
         <GlobalStyles />
       </>
     );

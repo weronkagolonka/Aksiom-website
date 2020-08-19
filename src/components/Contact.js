@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Contact = React.forwardRef((props, ref) => {
 
-    const { submit, setName, setEmail, setMessage } = props
+    const { submit, setName, setEmail, setMessage, state } = props
 
     return (
         <MainBox>
@@ -23,11 +23,11 @@ const Contact = React.forwardRef((props, ref) => {
                 <FormBox>
                     <form>
                         <FormLabel>Imię i nazwisko</FormLabel>
-                        <InformationField type={'text'} onChange={setName}></InformationField>
+                        <InformationField type={'text'} onChange={setName} value={state.name}></InformationField>
                         <FormLabel>Adres email</FormLabel>
-                        <InformationField type={'email'} onChange={setEmail}></InformationField>
+                        <InformationField type={'email'} onChange={setEmail} value={state.email}></InformationField>
                         <FormLabel>Zapytanie</FormLabel>
-                        <QuestionField onChange={setMessage}></QuestionField>
+                        <QuestionField onChange={setMessage} value={state.message}></QuestionField>
                     </form>
                     <div style={{ 'display': 'flex', 'justifyContent': 'flex-end' }}>
                         <Button onClick={submit}><h2>Wyślij</h2></Button>
@@ -104,11 +104,15 @@ const Button = styled.button`
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 24px;
-    background-color: #D5992E;
-    color: #fff;
-    border: 0px;
+    background-color: #fff;
+    color: #000;
+    border: 3px solid #D5992E;
     border-radius: 15px;
     outline: none;
+    &:active {
+        color: #fff;
+        background-color: #D5992E;
+    }
 `;
 
 
