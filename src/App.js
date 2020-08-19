@@ -8,7 +8,9 @@ import Services from './components/Services';
 import References from './components/References';
 import Contact from './components/Contact';
 import emailjs from 'emailjs-com';
-import toast from 'emailjs-com';
+import Footer from './components/Footer';
+import Links from './components/Links';
+
 //http://www.tax.pl/index.php?route=information/information&information_id=11
 class App extends Component {
 
@@ -90,6 +92,7 @@ class App extends Component {
         break;
       case 'contact':
         window.scrollTo({ top: this.contactSection.current.offsetTop - 120, behavior: 'smooth' });
+        break;
     }
   }
 
@@ -102,8 +105,8 @@ class App extends Component {
         <Info />
         <About ref={this.aboutSection} />
         <Services ref={this.servicesSection} />
-        <References />
         <Contact ref={this.contactSection} submit={this.handleSubmit} setName={this.onNameChange} setEmail={this.onEmailChange} setMessage={this.onMessageChange} state={this.state} />
+        <Footer />
         <GlobalStyles />
       </>
     );

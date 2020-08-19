@@ -18,7 +18,7 @@ const Contact = React.forwardRef((props, ref) => {
                         <p>+48 781 431 618</p>
                     </div>
                     <iframe src={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2552.6184033408763!2d18.918137415718498!3d50.22435097944496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716cd11b0ca0383%3A0xf8662d5402275625!2sBiuro%20Rachunkowe%20AKSIOM!5e0!3m2!1spl!2spl!4v1597776760093!5m2!1spl!2spl"}
-                        title={'map'} frameBorder={"0"} allowFullScreen={""} aria-hidden={"false"} tabIndex={"0"} width={600} height={350} style={{ 'marginTop': '48px' }}></iframe>
+                        title={'map'} frameBorder={"0"} allowFullScreen={""} aria-hidden={"false"} tabIndex={"0"} width={600} height={390} style={{ 'marginTop': '48px' }}></iframe>
                 </AddresBox>
                 <FormBox>
                     <form>
@@ -41,7 +41,7 @@ const Contact = React.forwardRef((props, ref) => {
 export default Contact
 
 const MainBox = styled.div`
-    background-color: #f8f8f8;
+    background-color: #fff;
     padding: 48px;
     width: 100%;
 `;
@@ -64,7 +64,7 @@ const FormBox = styled.div`
 const Title = styled.h1`
     text-align: center;
     margin-top: 36px;
-    padding-bottom: 48px;
+    padding-bottom: 96px;
 `;
 
 const FormLabel = styled.p`

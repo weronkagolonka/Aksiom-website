@@ -57,9 +57,6 @@ const NavBar = (props) => {
                         <NavItem>
                             <NLink onClick={() => goTo('contact')}>kontakt</NLink>
                         </NavItem>
-                        <NavItem>
-                            <NLink href="/">przydatne linki</NLink>
-                        </NavItem>
                     </NavLinks>
                 </FlexContainer>
             </Navbar>
