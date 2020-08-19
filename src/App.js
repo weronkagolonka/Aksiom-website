@@ -5,13 +5,10 @@ import Slideshow from './components/slideshow/SlideShow';
 import Info from './components/Info';
 import About from './components/About';
 import Services from './components/Services';
-import References from './components/References';
 import Contact from './components/Contact';
 import emailjs from 'emailjs-com';
 import Footer from './components/Footer';
-import Links from './components/Links';
 
-//http://www.tax.pl/index.php?route=information/information&information_id=11
 class App extends Component {
 
   constructor(props) {
@@ -93,6 +90,7 @@ class App extends Component {
       case 'contact':
         window.scrollTo({ top: this.contactSection.current.offsetTop - 120, behavior: 'smooth' });
         break;
+      default:
     }
   }
 

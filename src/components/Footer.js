@@ -25,11 +25,6 @@ const FooterBox = styled.div`
     background-color: #D5992E
 `;
 
-const Row = styled.div`
-    display: flex;
-    flex-direction: row;
-`;
-
 const CompanyName = styled.div`
     font-size: 1.25rem;
     font-family: 'Nunito', sans-serif;
