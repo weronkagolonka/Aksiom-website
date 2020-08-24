@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import katowice from '../../images/katowice.jpg';
 import { animated } from "react-spring";
-
+import { mq } from '../../breakpoints';
 
 const Slideshow = () => {
     /*
@@ -16,31 +16,33 @@ const Slideshow = () => {
 
     return (
         <SlideContainer>
-            <div style={{
-                'backgroundImage': `url(${katowice})`,
-                'height': '560px',
-                'width': '1440px',
-                'backgroundPosition': 'center',
-                'backgroundSize': 'cover',
-            }}>
-                <TextBox>
-                    <TitleSlide>Profesjonalne usługi księgowe</TitleSlide>
-                    <SubtitleSlide>Lokalnie. Na Śląsku.</SubtitleSlide>
-                </TextBox>
-
-            </div>
+            <TextBox>
+                <TitleSlide>Profesjonalne usługi księgowe</TitleSlide>
+                <SubtitleSlide>Lokalnie. Na Śląsku.</SubtitleSlide>
+            </TextBox>
         </SlideContainer>
     )
 }
 
 export default Slideshow
 
-const SlideContainer = styled(animated.div)`
-    
-`;
 
-const TextBox = styled.div`
-   margin: 6.5rem auto;
+const SlideContainer = styled(animated.div)`
+    ${mq({
+    backgroundImage: `url(${katowice})`,
+    height: ['420px', '420px', '560px', '560px'],
+    width: '100%',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    marginTop: ['144px', '144px', '0px', '0px'],
+    position: 'block',
+})};
+    `;
+
+const TextBox = styled('div')`
+    ${mq({
+    margin: ['5rem auto', '5rem auto', '6.5rem auto', '6.5rem auto'],
+})};
    width: 100%;
    height: 100%;
    display: flex;
@@ -50,6 +52,9 @@ const TextBox = styled.div`
 `;
 
 const TitleSlide = styled.h1`
+    ${mq({
+    margin: ['24px', '24px', '48px', '48px']
+})};
     text-align: center;
     color: white;
 `;

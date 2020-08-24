@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaAngleDown } from 'react-icons/fa';
-
+import { mq } from '../../breakpoints';
 import { useSpring, animated, config } from "react-spring";
 import Brand from './Brand';
+import Burgermenu from './BurgerMemu';
+import CollapseMenu from './CollapseMenu';
 
 const NavBar = (props) => {
-
     const { goTo } = props
 
     const barAnimation = useSpring({
@@ -58,8 +59,19 @@ const NavBar = (props) => {
                             <NLink onClick={() => goTo('contact')}>kontakt</NLink>
                         </NavItem>
                     </NavLinks>
+                    <BurgerWrapper>
+                        <Burgermenu navbarState={props.navbarState}
+                            handleNavbar={props.handleNavbar}
+                        />
+                    </BurgerWrapper>
                 </FlexContainer>
             </Navbar>
+            <CollapseMenu
+                navbarState={props.navbarState}
+                handleNavbar={props.handleNavbar}
+                move={props.goTo}
+            />
+
         </>
     );
 }
@@ -69,14 +81,14 @@ const NavBar = (props) => {
 export default NavBar
 
 
-const Menu = styled.ul`
+const Menu = styled('ul')`
     list-style-type: none;
     display: none;
     position: absolute;
     top: 80%;
     left: 30px;
     background-color: #fff;
-    width: 350px;
+    width: 100%;
     padding-top: 25px;
     padding-bottom: 10px;
     border-radius: 25px;
@@ -105,30 +117,40 @@ const MenuItem = styled.li`
 
 
 const Navbar = styled(animated.nav)`
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: #ffffff;
-    z-index: 1;
-    font-size: 1rem;
+    ${mq({
+    position: 'fixed',
+    width: '100%',
+    top: '0',
+    left: '0',
+    background: '#fff',
+    zIndex: '1',
+    fontSize: ['0.5rem', '0.5rem', '1rem', '1rem'],
+})};
 `;
 
-const FlexContainer = styled.div`
-    max-width: 120rem;
-    display: flex;
-    margin: auto;
-    padding: 0 3rem;
-    justify-content: space-between;
-    height: 6.5rem;
+const FlexContainer = styled('div')`
+    ${mq({
+    display: 'flex',
+    marginLeft: ['24px', '24px', '48px', '48px'],
+    marginRight: ['24px', '24px', '48px', '48px'],
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    height: ['9rem', '9rem', '6.5rem', '6.5rem'],
+})};
 `;
 
 const NavLinks = styled(animated.ul)`
-    display: flex;
-    height: 100%;
-    justify-self: end;
-    list-style-type: none;
-    margin: auto 0;
+    ${mq({
+    display: 'flex',
+    height: ['40%', '40%', '100%', '100%'],
+    justifySelf: 'end',
+    alignItems: 'center',
+    listStyleType: 'none',
+    margin: 'auto 0',
+})};
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const NLink = styled.a`
@@ -136,16 +158,18 @@ const NLink = styled.a`
     text-decoration: none;
 `;
 
-const NavItem = styled.li`
-    height: 100%;
-    text-transform: uppercase;
-    font-weight: 700;
-    border: none;
-    transition: all 300ms linear 0s;
-    cursor: pointer;
-    display: inline-block;
-    padding-top: 2.5rem;
-    padding-left: 3rem;
+const NavItem = styled('li')`
+    ${mq({
+    height: ['40%', '40%', '80%', '100%'],
+    textTransform: 'uppercase',
+    fontWeight: '700',
+    border: 'none',
+    transition: 'all 300ms linear 0s',
+    cursor: 'pointer',
+    display: 'inline-block',
+    paddingTop: ['0.35rem', '0.35rem', '2.5rem', '2.5rem'],
+    paddingLeft: ['0.25rem', '0.25rem', '3rem', '3rem'],
+})};
     &:hover ${Menu} {
         display: block;
     }
@@ -153,6 +177,14 @@ const NavItem = styled.li`
         color: #D5992E;
     }
 `;
+
+const BurgerWrapper = styled.div`
+  margin: auto 0;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+  `;
 
 
 

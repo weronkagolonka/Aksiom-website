@@ -24,7 +24,8 @@ class App extends Component {
     this.state = {
       name: '',
       email: '',
-      message: ''
+      message: '',
+      navbarOpen: false,
     }
   }
 
@@ -65,18 +66,32 @@ class App extends Component {
     }
   }
 
+  handleNavbar = () => {
+    this.setState({ navbarOpen: !this.state.navbarOpen });
+  }
+
   resetForm() {
     this.setState({ name: '', email: '', message: '' });
   }
 
   scrollToContent(content) {
 
+    let offset = 120;
+    let serviceOffset = 120;
+
+    if (this.state.navbarOpen) this.setState({ navbarOpen: false })
+
+    if (window.innerHeight > 768) {
+      offset = 180;
+      serviceOffset = 250;
+    }
+
     switch (content) {
       case 'about':
-        window.scrollTo({ top: this.aboutSection.current.offsetTop - 120, behavior: 'smooth' });
+        window.scrollTo({ top: this.aboutSection.current.offsetTop - offset, behavior: 'smooth' });
         break;
       case 'services1':
-        window.scrollTo({ top: this.servicesSection.current.offsetTop - 120, behavior: 'smooth' });
+        window.scrollTo({ top: this.servicesSection.current.offsetTop - serviceOffset, behavior: 'smooth' });
         break;
       case 'services2':
         window.scrollTo({ top: this.servicesSection.current.offsetTop + 250, behavior: 'smooth' });
@@ -88,7 +103,7 @@ class App extends Component {
         window.scrollTo({ top: this.servicesSection.current.offsetTop + 1520, behavior: 'smooth' });
         break;
       case 'contact':
-        window.scrollTo({ top: this.contactSection.current.offsetTop - 120, behavior: 'smooth' });
+        window.scrollTo({ top: this.contactSection.current.offsetTop - offset, behavior: 'smooth' });
         break;
       default:
     }
@@ -98,17 +113,22 @@ class App extends Component {
 
     return (
       <>
-        <NavBar goTo={this.scrollToContent} />
+        <NavBar goTo={this.scrollToContent} navbarState={this.state.navbarOpen} handleNavbar={this.handleNavbar} />
         <Slideshow />
         <Info />
         <About ref={this.aboutSection} />
         <Services ref={this.servicesSection} />
-        <Contact ref={this.contactSection} submit={this.handleSubmit} setName={this.onNameChange} setEmail={this.onEmailChange} setMessage={this.onMessageChange} state={this.state} />
+        <Contact
+          ref={this.contactSection}
+          submit={this.handleSubmit}
+          setName={this.onNameChange}
+          setEmail={this.onEmailChange}
+          setMessage={this.onMessageChange}
+          state={this.state} />
         <Footer />
         <GlobalStyles />
       </>
     );
   }
 }
-
 export default App;
