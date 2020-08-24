@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaAngleDown, FaBorderNone } from 'react-icons/fa';
+import { FaAngleDown } from 'react-icons/fa';
 import { mq } from '../../breakpoints';
 import { useSpring, animated, config } from "react-spring";
 import Brand from './Brand';
 import Burgermenu from './BurgerMemu';
 import CollapseMenu from './CollapseMenu';
-import Headroom from 'react-headroom';
 
 const NavBar = (props) => {
     const { goTo } = props
