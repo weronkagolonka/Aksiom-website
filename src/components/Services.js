@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { mq } from '../breakpoints';
 
 const Services = React.forwardRef((props, ref) => {
 
@@ -86,14 +87,18 @@ export default Services
 //E5B523
 
 const Background = styled.div`
+    ${mq({
+    paddingTop: ['12px', '12px', '48px', '48px'],
+    paddingBottom: ['12px', '12px', '48px', '48px'],
+})}
     background-color: #f8f8f8;
-    padding-top: 48px;
-    padding-bottom: 48px;
 `;
 
 const MainBox = styled.div`
+    ${mq({
+    margin: ['24px', '24px', '48px', '48px'],
+})};
     height: auto;
-    margin: 48px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -104,12 +109,16 @@ const Title = styled.h1`
     text-align: center;
     color: #000;
     margin-top: 36px;
-    padding-bottom: 48px;
+    ${mq({
+    paddingBottom: ['24px', '24px', '48px', '48px']
+})};
 `;
 
 const Row = styled.div`
+    ${mq({
+    flexDirection: ['column', 'column', 'row', 'row'],
+})};
     display: flex;
-    flex-direction: row;
     height: auto;
     width: 100%;
     align-items: center;
@@ -117,41 +126,54 @@ const Row = styled.div`
 `;
 
 const Spacer = styled.div`
-    height: 96px;
+    ${mq({
+    height: ['48px', '48px', '96px', '96px']
+})};
 `;
 
 const Box = styled.div`
+    ${mq({
+    width: ['80%', '80%', '350px', '50%'],
+    marginBottom: ['40px', '40px', '20px', '20px'],
+    marginLeft: ['15px', '15px', '20px', '20px'],
+    alignSelf: ['center', 'center', 'baseline', 'baseline'],
+    height: ['100px', '100px', '200px', '200px'],
+    padding: ['12px', '12px', '0px', '0px']
+})};
     height: 200px;
-    width: 50%;
     display: flex;
-    align-self: baseline;
     align-items: center;
     justify-content: center;
     background-color: #fff;
     border: 5px solid #D5992E;
     border-radius: 25px;
     box-shadow: -20px 20px #D5992E;
-    margin-bottom: 20px;
-    margin-left: 20px;
 `;
 
 const Subtitle = styled.h2`
+    ${mq({
+    fontSize: ['1rem', '1rem', '1.5rem', '2rem']
+})};
     text-align: center;
     color: #000;
 `;
 
 const ServiceListRight = styled.ul`
-    flex: 60%;
+    ${mq({
+    flex: ['100%', '100%', '60%', '60%'],
+    paddingLeft: ['0px', '0px', '48px', '72px'],
+})};
     list-style-type: none;
     align-content: center;
-    padding-left: 72px;
 `;
 
 const ListItem = styled.li`
-    text-align: left;
+    ${mq({
+    textAlign: ['center', 'center', 'left', 'left'],
+    fontSize: ['0.75rem', '0.75rem', '1.1rem', '1.25rem'],
+    marginRight: ['0px', '0px', '20px', '48px']
+})};
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1.25rem;
     padding:10px;
-    margin-right: 48px;
     color: #000;
 `;

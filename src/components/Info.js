@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { mq } from '../breakpoints';
 
 const Info = () => {
     return (
@@ -21,19 +22,31 @@ export default Info
 
 const InfoBox = styled.div`
     width: 100%;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    ${mq({
+    paddingTop: ['3rem', '3rem', '6rem', '6rem'],
+    paddingBottom: ['3rem', '3rem', '6rem', '6rem'],
+
+})};
 `;
 
 export { InfoBox }
 
 const InfoTitle = styled.h1`
+    ${mq({
+    marginLeft: ['24px', '24px', '48px', '48px'],
+    marginRight: ['24px', '24px', '48px', '48px'],
+})};
     text-align: center;
 `;
 
 const InfoSubtitle = styled.p`
-    margin: 48px;
-    margin-bottom: 0px;
+    ${mq({
+    marginTop: ['24px', '24px', '48px', '48px'],
+    marginLeft: ['24px', '24px', '48px', '48px'],
+    marginRight: ['24px', '24px', '48px', '48px'],
+    marginBottom: '0px',
+
+})};
     text-align: justify;
     text-align-last: center;
     line-height: 1.666;

@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import emoji from '../images/emoji.jpg';
+import { mq } from '../breakpoints';
 
 const About = React.forwardRef((props, ref) => {
     return (
-        <div style={{ 'marginBottom': '48px', }} ref={ref}>
+        <MainContainer ref={ref}>
             <TitleBox>
                 <Title>
                     O nas
@@ -35,21 +36,27 @@ const About = React.forwardRef((props, ref) => {
 
                 </TextContainer>
             </AboutBox>
-        </div>
+        </MainContainer>
     );
 })
 
 export default About
 
+const MainContainer = styled.div`
+
+`;
+
 const AboutBox = styled.div`
-    padding-left: 48px;
-    padding-right: 48px;
-    padding-top: 48px;
+    ${mq({
+    paddingLeft: ['24px', '24px', '48px', '48px'],
+    paddingRight: ['24px', '24px', '48px', '48px'],
+    paddingTop: ['24px', '24px', '48px', '48px'],
+    paddingBottom: ['24px', '24px', '48px', '48px'],
+    flexDirection: ['column', 'column', 'column', 'row'],
+    alignItems: ['center', 'center', 'center', 'stretch'],
+})};
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: stretch;
-    height: 675px;
 `;
 
 const PicContainer = styled.div`
@@ -67,7 +74,9 @@ const TextContainer = styled.div`
     justify-content: center;
     align-items: center;
     order: 3;
-    width: 60%;
+    ${mq({
+    width: ['100%', '100%', '100%', '60%'],
+})};
 `;
 
 const Spacer = styled.div`
@@ -81,6 +90,10 @@ const AboutText = styled.p`
 `;
 
 const TitleBox = styled.div`
+    ${mq({
+    marginBottom: ['12px', '12px', '36px', '36px']
+
+})};
     width: 100%;
     align-content: center;
 `;
