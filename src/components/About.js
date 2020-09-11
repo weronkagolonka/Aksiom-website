@@ -60,6 +60,9 @@ const AboutBox = styled.div`
 `;
 
 const PicContainer = styled.div`
+    ${mq({
+    display: ['none', 'none', 'none'],
+})};
     order: 1;
     width: 40%;
     background-image: url(${fotka_S});
