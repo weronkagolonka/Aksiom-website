@@ -33,17 +33,17 @@ export { InfoBox }
 
 const InfoTitle = styled.h1`
     ${mq({
-    marginLeft: ['24px', '24px', '48px', '48px'],
-    marginRight: ['24px', '24px', '48px', '48px'],
+    marginLeft: ['24px', '24px', '48px', '48px', '96px'],
+    marginRight: ['24px', '24px', '48px', '48px', '96px'],
 })};
     text-align: center;
 `;
 
 const InfoSubtitle = styled.p`
     ${mq({
-    marginTop: ['24px', '24px', '48px', '48px'],
-    marginLeft: ['24px', '24px', '48px', '48px'],
-    marginRight: ['24px', '24px', '48px', '48px'],
+    marginTop: ['24px', '24px', '48px', '48px',],
+    marginLeft: ['24px', '24px', '48px', '48px', '96px'],
+    marginRight: ['24px', '24px', '48px', '48px', '96px'],
     marginBottom: '0px',
 
 })};

@@ -43,7 +43,7 @@ export default Contact
 
 const MainBox = styled.div`
     ${mq({
-    padding: ['24px', '24px', '48px', '48px']
+    padding: ['24px', '24px', '48px', '48px', '96px']
 })}
     background-color: #fff;
     width: 100%;
