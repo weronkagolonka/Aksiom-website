@@ -61,7 +61,7 @@ const AboutBox = styled.div`
 
 const PicContainer = styled.div`
     ${mq({
-    display: ['none', 'none', 'none'],
+    display: ['none', 'none', 'none', 'block', 'block'],
 })};
     order: 1;
     width: 40%;
