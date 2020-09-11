@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import fotka_S from '../images/fotka_S.jpg';
+import mama_2 from '../images/mama_2.jpg';
 import { mq } from '../breakpoints';
 
 const About = React.forwardRef((props, ref) => {
@@ -65,7 +65,7 @@ const PicContainer = styled.div`
 })};
     order: 1;
     width: 40%;
-    background-image: url(${fotka_S});
+    background-image: url(${mama_2});
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
