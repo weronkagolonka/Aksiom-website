@@ -96,8 +96,8 @@ const Background = styled.div`
 
 const MainBox = styled.div`
     ${mq({
-    marginLeft: ['24px', '24px', '48px', '48px', '666px'],
-    marginRight: ['24px', '24px', '48px', '48px', '666px'],
+    marginLeft: ['24px', '24px', '48px', '48px', '354px', '666px'],
+    marginRight: ['24px', '24px', '48px', '48px', '354px', '666px'],
     marginTop: ['24px', '24px', '48px', '48px', '48px'],
     marginBottom: ['24px', '24px', '48px', '48px', '48px'],
 

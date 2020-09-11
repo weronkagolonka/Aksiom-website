@@ -45,8 +45,8 @@ const MainBox = styled.div`
     ${mq({
     paddingTop: ['24px', '24px', '48px', '48px', '48px'],
     paddingBottom: ['24px', '24px', '48px', '48px', '48px'],
-    paddingLeft: ['24px', '24px', '48px', '48px', '666px'],
-    paddingRight: ['24px', '24px', '48px', '48px', '666px'],
+    paddingLeft: ['24px', '24px', '48px', '48px', '354px', '666px'],
+    paddingRight: ['24px', '24px', '48px', '48px', '354px', '666px'],
 })}
     background-color: #fff;
     width: 100%;

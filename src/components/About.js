@@ -48,8 +48,8 @@ const MainContainer = styled.div`
 
 const AboutBox = styled.div`
     ${mq({
-    paddingLeft: ['24px', '24px', '48px', '48px', '666px'],
-    paddingRight: ['24px', '24px', '48px', '48px', '666px'],
+    paddingLeft: ['24px', '24px', '48px', '48px', '354px', '666px'],
+    paddingRight: ['24px', '24px', '48px', '48px', '354px', '666px'],
     paddingTop: ['24px', '24px', '48px', '48px'],
     paddingBottom: ['24px', '24px', '48px', '48px'],
     flexDirection: ['column', 'column', 'column', 'row'],
