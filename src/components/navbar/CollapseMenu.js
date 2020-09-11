@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { mq } from '../../breakpoints';
-import { useSpring, animated } from 'react-spring';
+import { animated } from 'react-spring';
+//useSpring
 
 const CollapseMenu = (props) => {
-    const { open } = useSpring({ open: props.navbarState ? 0 : 1 });
+    //const { open } = useSpring({ open: props.navbarState ? 0 : 1 });
     const { move } = props
 
     if (props.navbarState === true) {
         return (
+            //fix react state memory leak
+            /*
             <CollapseWrapper style={{
                 transform: open.interpolate({
                     range: [0, 0.2, 0.3, 1],
@@ -16,6 +19,8 @@ const CollapseMenu = (props) => {
                 }).interpolate(openValue => `translate3d(0, ${openValue}px, 0`),
             }}
             >
+            */
+            <CollapseWrapper>
                 <NavLinks>
                     <li><NavItem onClick={() => move('services1')}>Oferta</NavItem></li>
                     <li><NavItem onClick={() => move('about')}>O nas</NavItem></li>

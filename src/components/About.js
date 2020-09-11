@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import emoji from '../images/emoji.jpg';
+import fotka_S from '../images/fotka_S.jpg';
 import { mq } from '../breakpoints';
 
 const About = React.forwardRef((props, ref) => {
@@ -62,10 +62,15 @@ const AboutBox = styled.div`
 const PicContainer = styled.div`
     order: 1;
     width: 40%;
-    background-image: url(${emoji});
+    background-image: url(${fotka_S});
     background-position: center top;
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 25px;
+    border: 5px solid #D5992E;
+    box-shadow: -20px 20px #D5992E;
+    margin-left: 20px;
+    margin-bottom: 20px;
 `;
 
 const TextContainer = styled.div`

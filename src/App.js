@@ -79,11 +79,11 @@ class App extends Component {
     let offset = 120;
     let serviceOffset = 120;
 
-    if (this.state.navbarOpen) this.setState({ navbarOpen: false })
+    if (this.state.navbarOpen) this.handleNavbar();
 
     if (window.innerHeight > 768) {
-      offset = 180;
-      serviceOffset = 250;
+      offset = 190;
+      serviceOffset = 270;
     }
 
     switch (content) {

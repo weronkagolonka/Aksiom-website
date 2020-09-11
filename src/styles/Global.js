@@ -1,20 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 import '../fonts/Nunito-Bold.ttf';
 import '../fonts/SourceSansPro-Regular.ttf';
+import '../fonts/SourceSansPro-Bold.ttf';
 import { mq } from '../breakpoints';
 
 const GlobalStyles = createGlobalStyle`
-
-    @font-face {
-        font-family: 'Nunito';
-        src: local('Nunito'), format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Source Sans Pro';
-        src: local('SourceSansPro'), format('truetype');
-    }
-
     *,
     *::after,
     *::before {
