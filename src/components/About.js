@@ -60,9 +60,6 @@ const AboutBox = styled.div`
 `;
 
 const PicContainer = styled.div`
-    @media only screen and (min-width: 2500px) {
-        background-size: contain;
-    }
     order: 1;
     width: 40%;
     background-image: url(${fotka_S});
