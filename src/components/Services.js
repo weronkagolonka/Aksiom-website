@@ -96,7 +96,11 @@ const Background = styled.div`
 
 const MainBox = styled.div`
     ${mq({
-    margin: ['24px', '24px', '48px', '48px', '96px'],
+    marginLeft: ['24px', '24px', '48px', '48px', '666px'],
+    marginRight: ['24px', '24px', '48px', '48px', '666px'],
+    marginTop: ['24px', '24px', '48px', '48px', '48px'],
+    marginBottom: ['24px', '24px', '48px', '48px', '48px'],
+
 })};
     height: auto;
     display: flex;

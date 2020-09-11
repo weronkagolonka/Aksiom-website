@@ -131,8 +131,8 @@ const Navbar = styled(animated.nav)`
 const FlexContainer = styled('div')`
     ${mq({
     display: 'flex',
-    marginLeft: ['24px', '24px', '48px', '48px', '96px'],
-    marginRight: ['24px', '24px', '48px', '48px', '96px'],
+    marginLeft: ['24px', '24px', '48px', '48px', '666px'],
+    marginRight: ['24px', '24px', '48px', '48px', '666px'],
     justifyContent: 'space-between',
     alignItems: 'center',
     height: ['9rem', '9rem', '6.5rem', '6.5rem'],
