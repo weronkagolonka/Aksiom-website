@@ -14,6 +14,12 @@ const Info = () => {
                 Służymy także pomocą osobom chcącym dopiero rozpocząć swoją działalność gospodarczą oraz firmom stawiającym pierwsze kroki na rynku.
                 Dzięki współpracy z naszym biurem rachunkowym, możesz skupić się na swoim biznesie, a obsługę księgową pozostawić nam.
             </InfoSubtitle>
+            <InfoSubtitle>
+                Jeżeli wyprawa do naszego biura jest zbyt czasochłonnym przedsięwzięciem, oferujemy wysyłkę dokumentów kurierem
+                - jest to oczywiście usługa bezpłatna. Wystarczy jedynie upoważnienie do odbioru, dzięki któremu zajmiemy się wszystkimi formalnościami, takimi jak
+                wybranie firmy kurierskiej, nadanie zlecenia i jego bezpieczna realizacja. O każdym odbiorze będziesz powiadamiany, dzięki czemu zachowasz pełną kontrolę
+                i jednocześnie zaoszczędzisz mnóstwo czasu.
+            </InfoSubtitle>
         </InfoBox>
     );
 }
