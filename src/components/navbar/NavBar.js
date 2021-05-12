@@ -80,7 +80,6 @@ const NavBar = (props) => {
 
 export default NavBar
 
-
 const Menu = styled('ul')`
     list-style-type: none;
     display: none;

@@ -21,10 +21,13 @@ const Info = () => {
                 i jednocześnie zaoszczędzisz mnóstwo czasu.
             </InfoSubtitle>
         </InfoBox>
+        
     );
 }
 
 export default Info
+
+
 
 const InfoBox = styled.div`
     width: 100%;
