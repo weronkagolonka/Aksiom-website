@@ -51,7 +51,7 @@ class App extends Component {
         feedback: this.state.message
       }
 
-      emailjs.send("smtp_server", "template_e9rRRQAR", templateParams, "user_X6ewtT8WAJbK1P5EqLmm0").then(
+      emailjs.send("smtp_server", process.env.REACT_APP_EMAIL_TEMPLATE_ID, templateParams, process.env.REACT_APP_EMAIL_USER_ID).then(
         (result) => {
           console.log(result.text);
         }, (error) => {
