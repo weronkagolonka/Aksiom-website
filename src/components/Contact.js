@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { mq } from '../breakpoints';
+import { config } from '../config';
 
 const Contact = React.forwardRef((props, ref) => {
 
@@ -12,12 +13,12 @@ const Contact = React.forwardRef((props, ref) => {
                 <AddresBox>
                     <div>
                         <p style={{ 'fontWeight': 'bold', }}>Biuro Rachunkowe AKSIOM</p>
-                        <p>ul. Koszykowa 21a/1</p>
+                        <p>ul. Owsiana 62</p>
                         <p>40-780 Katowice</p>
                         <p><br />biuro@aksiom.pl</p>
                         <p>+48 514 088 487</p>
                     </div>
-                    <Map src={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2552.6184033408763!2d18.918137415718498!3d50.22435097944496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716cd11b0ca0383%3A0xf8662d5402275625!2sBiuro%20Rachunkowe%20AKSIOM!5e0!3m2!1spl!2spl!4v1597776760093!5m2!1spl!2spl"}
+                    <Map src={config.mapsURL}
                         title={'map'} frameBorder={"0"} allowFullScreen={""} aria-hidden={"false"} tabIndex={"0"}></Map>
                 </AddresBox>
                 <FormBox>

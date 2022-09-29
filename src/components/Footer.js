@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaLinkedin } from 'react-icons/fa';
+import { config } from '../config';
 
 const Footer = (props) => {
     return (
@@ -9,7 +10,7 @@ const Footer = (props) => {
             <FooterContent>NIP: 6442324607</FooterContent>
             <FooterContent>Regon: 243418808</FooterContent>
             <div style={{ 'display': 'flex', 'justifyContent': 'center', 'padding': '24px' }}>
-                <a href={"https://www.linkedin.com/in/biuro-rachunkowe-aksiom-b203171b2/"} target={"blank"}>
+                <a href={config.linkedinURL} target={"blank"}>
                     <FaLinkedin size={36} color={"#000"} />
                 </a>
             </div>
