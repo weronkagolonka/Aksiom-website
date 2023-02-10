@@ -8,7 +8,7 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import emailjs from 'emailjs-com';
 import Footer from './components/Footer';
-
+import Awards from "./components/Awards";
 class App extends Component {
 
   constructor(props) {
@@ -116,6 +116,7 @@ class App extends Component {
         <NavBar goTo={this.scrollToContent} navbarState={this.state.navbarOpen} handleNavbar={this.handleNavbar} />
         <Slideshow />
         <Info />
+        <Awards />
         <About ref={this.aboutSection} />
         <Services ref={this.servicesSection} />
         <Contact

@@ -43,7 +43,10 @@ const About = React.forwardRef((props, ref) => {
 export default About
 
 const MainContainer = styled.div`
-
+    ${mq({
+        marginTop: ['3rem', '3rem', '6rem', '6rem', '6rem']
+    })}
+    margin-top: 6rem;
 `;
 
 const AboutBox = styled.div`
@@ -53,18 +56,19 @@ const AboutBox = styled.div`
     paddingTop: ['24px', '24px', '48px', '48px'],
     paddingBottom: ['24px', '24px', '48px', '48px'],
     flexDirection: ['column', 'column', 'column', 'row'],
-    alignItems: ['center', 'center', 'center', 'stretch'],
+    alignItems: ['center', 'center', 'center', 'flex-start', 'flex-start'],
 })};
     display: flex;
     justify-content: center;
 `;
-
+//1136
 const PicContainer = styled.div`
     ${mq({
     display: ['none', 'none', 'none', 'block', 'block'],
 })};
     order: 1;
-    width: 50%;
+    width: 320px;
+    height: 568px;
     background-image: url(${portrait});
     background-position: top center;
     background-size: cover;

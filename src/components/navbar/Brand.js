@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../../assets/logo-website-yellow.png';
-import nagroda from '../../images/nagroda.png';
 import { mq } from '../../breakpoints';
 
 const Brand = () => {
     return (
         <Container>
             <Image onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} src={logo} alt="Company-logo" />
-            <AwardImage src={nagroda} alt="Company-award"/>
         </Container>
     )
 }
@@ -38,5 +36,4 @@ const Image = styled('img')`
     margin: 'auto 0',
     cursor: 'pointer'
 })};
-
 `;
