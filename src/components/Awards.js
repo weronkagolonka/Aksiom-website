@@ -7,7 +7,7 @@ import { mq } from '../breakpoints';
 
 const Awards = (props) => {
     return (
-        <MainContainer>
+        <div>
             <AwardsBox>
                 <AwardImage src={nagroda} alt="Company-award"/>
                 <AwardImage src={kapitalnaFirma} alt="program-paricipation" />
@@ -15,26 +15,15 @@ const Awards = (props) => {
                     <AwardImage src={rzetelnaFirmaLogo} alt="certification" />
                 </a>
             </AwardsBox>
-        </MainContainer>
+        </div>
     )
 }
 
 export default Awards
 
-const MainContainer = styled.div`
-    ${mq({
-        paddingBottom: ['0rem', '0rem', '3rem', '3rem', '3rem']
-    })}
-`;
-
 const AwardImage = styled('img')`
     height: 80px;
     padding: 0 3rem;
-`;
-
-const Title = styled.h1`
-    text-align: center;
-    margin-bottom: 3rem;
 `;
 
 const AwardsBox = styled.div`

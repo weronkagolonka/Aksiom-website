@@ -32,7 +32,7 @@ export default Info
 const InfoBox = styled.div`
     width: 100%;
     ${mq({
-    paddingTop: ['3rem', '3rem', '6rem', '6rem'],
+    paddingTop: ['3rem', '1rem', '1rem', '6rem'],
     paddingBottom: ['3rem', '3rem', '6rem', '6rem'],
 
 })};

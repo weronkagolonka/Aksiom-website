@@ -22,7 +22,7 @@ const CollapseMenu = (props) => {
             */
             <CollapseWrapper>
                 <NavLinks>
-                    <li><NavItem onClick={() => move('services1')}>Oferta</NavItem></li>
+                    <li><NavItem onClick={() => move('accounting-services')}>Oferta</NavItem></li>
                     <li><NavItem onClick={() => move('about')}>O nas</NavItem></li>
                     <li><NavItem onClick={() => move('contact')}>Kontakt</NavItem></li>
                 </NavLinks>
