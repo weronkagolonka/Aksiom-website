@@ -3,7 +3,7 @@ export const sizes = {
     NAVBAR_HEIGHT_MOBILE: '9rem',
 
     HERO_BANNER_HEIGHT_DESKTOP: '560px',
-    HERO_BANNER_HEIGHT_MOBILE: '720px',
+    HERO_BANNER_HEIGHT_MOBILE: '740px',
 
     H1_FONT_SIZE_DESKTOP:'2.5rem',
 

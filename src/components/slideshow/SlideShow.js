@@ -36,6 +36,9 @@ const Slideshow = () => {
 export default Slideshow
 
 const HeroText = styled.div`
+${mq({
+    fontSize: ['2rem', '2rem', '2.5rem', '3rem']
+})}
     font-weight: 900;
     font-size: 3rem;
 `
@@ -45,7 +48,7 @@ const HeroBanner = styled(animated.div)`
     height: [
         `${sizes.HERO_BANNER_HEIGHT_MOBILE}`, 
         `${sizes.HERO_BANNER_HEIGHT_MOBILE}`, 
-        `${sizes.HERO_BANNER_HEIGHT_DESKTOP}`, 
+        `${sizes.HERO_BANNER_HEIGHT_MOBILE}`, 
         `${sizes.HERO_BANNER_HEIGHT_DESKTOP}`
     ],
     marginTop: [
@@ -55,7 +58,7 @@ const HeroBanner = styled(animated.div)`
         `${sizes.NAVBAR_HEIGHT_DESKTOP}`
     ],
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: ['column', 'column', 'column', 'row'],
 })};
     `;
 
@@ -68,9 +71,9 @@ const HeroBannerImage = styled('div')`
 
 const TextBox = styled('div')`
     ${mq({
-    margin: ['5rem auto', '5rem auto', '6.5rem auto', '6.5rem auto 1rem auto'],
-    paddingLeft: ['24px', '24px', '48px', '4rem'],
-    paddingRight: ['24px', '24px', '48px', '6.5rem']
+    margin: ['2rem 1rem', '2rem 1rem', '2rem 1rem', '6.5rem auto 1rem auto'],
+    paddingLeft: ['24px', '24px', '12px', '4rem'],
+    paddingRight: ['24px', '24px', '12px', '6.5rem']
 })};
    display: flex;
    background-color: white;

@@ -140,6 +140,9 @@ const Spacer = styled.div`
 `;
 
 const Section = styled.div`
+${mq({
+    marginBottom: ['48px', '48px', '48px', '96px']
+})}
     width: 100%;
     height: 100px;
     display: flex;
