@@ -124,7 +124,7 @@ const Title = styled.h1`
 
 const Row = styled.div`
     ${mq({
-    flexDirection: ['column', 'column', 'row', 'row'],
+    flexDirection: ['column', 'column', 'column', 'row'],
 })};
     display: flex;
     height: auto;
@@ -135,13 +135,14 @@ const Row = styled.div`
 
 const Spacer = styled.div`
     ${mq({
-    height: ['48px', '48px', '96px', '96px']
+    height: ['48px', '48px', '48px', '96px']
 })};
 `;
 
 const Section = styled.div`
 ${mq({
-    marginBottom: ['48px', '48px', '48px', '96px']
+    marginBottom: ['48px', '48px', '48px', '96px'],
+    height: ['40px', '60px', '80px', '100px']
 })}
     width: 100%;
     height: 100px;
@@ -157,11 +158,11 @@ ${mq({
 
 const Box = styled.div`
     ${mq({
-    width: ['80%', '80%', '350px', '50%'],
-    marginBottom: ['40px', '40px', '20px', '20px'],
+    width: ['100%', '100%', '90%', '50%'],
+    marginBottom: ['40px', '40px', '50px', '20px'],
     marginLeft: ['15px', '15px', '20px', '20px'],
-    alignSelf: ['center', 'center', 'baseline', 'baseline'],
-    height: ['100px', '100px', '200px', '200px'],
+    alignSelf: ['center', 'center', 'center', 'baseline'],
+    height: ['60px', '60px', '100px', '200px'],
     padding: ['12px', '12px', '0px', '0px']
 })};
     height: 200px;
@@ -184,8 +185,8 @@ const Subtitle = styled.h2`
 
 const ServiceListRight = styled.ul`
     ${mq({
-    flex: ['100%', '100%', '60%', '60%'],
-    paddingLeft: ['0px', '0px', '48px', '72px'],
+    flex: ['100%', '100%', '100%', '60%'],
+    paddingLeft: ['0px', '0px', '0px', '72px'],
 })};
     list-style-type: none;
     align-content: center;
@@ -194,7 +195,7 @@ const ServiceListRight = styled.ul`
 const ListItem = styled.li`
     ${mq({
     textAlign: ['center', 'center', 'left', 'left'],
-    fontSize: ['0.75rem', '0.75rem', '1.1rem', '1.25rem'],
+    fontSize: ['0.75rem', '0.9rem', '1.1rem', '1.25rem'],
     marginRight: ['0px', '0px', '20px', '48px']
 })};
     font-family: 'Source Sans Pro', sans-serif;
