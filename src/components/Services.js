@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { colors, sizes } from '../styles/constants';
 import { mq } from '../breakpoints';
 
 const Services = React.forwardRef((props, ref) => {
@@ -10,8 +11,11 @@ const Services = React.forwardRef((props, ref) => {
                 Nasza oferta
             </Title>
             <MainBox>
+                <Section ref={ref}>
+                    <Subtitle>Usługi księgowe</Subtitle>
+                </Section>
                 <Row>
-                    <Box ref={ref}>
+                    <Box>
                         <Subtitle>Ryczałt od przychodów ewidencjonowanych</Subtitle>
                     </Box>
                     <ServiceListRight>
@@ -91,7 +95,7 @@ const Background = styled.div`
     paddingTop: ['12px', '12px', '48px', '48px'],
     paddingBottom: ['12px', '12px', '48px', '48px'],
 })}
-    background-color: #f8f8f8;
+    background-color: ${colors.BACKGROUND_GREY};
 `;
 
 const MainBox = styled.div`
@@ -135,6 +139,19 @@ const Spacer = styled.div`
 })};
 `;
 
+const Section = styled.div`
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${colors.MAIN_YELLOW};
+    color: white;
+    border-radius: ${sizes.BORDER_RADIUS};
+    text-align: center;
+    margin-bottom: 96px;
+`;
+
 const Box = styled.div`
     ${mq({
     width: ['80%', '80%', '350px', '50%'],
@@ -149,9 +166,9 @@ const Box = styled.div`
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    border: 5px solid #D5992E;
-    border-radius: 25px;
-    box-shadow: -20px 20px #D5992E;
+    border: 5px solid ${colors.MAIN_YELLOW};
+    border-radius: ${sizes.BORDER_RADIUS};
+    box-shadow: -20px 20px ${colors.MAIN_YELLOW};
 `;
 
 const Subtitle = styled.h2`

@@ -90,17 +90,8 @@ class App extends Component {
       case 'about':
         window.scrollTo({ top: this.aboutSection.current.offsetTop - offset, behavior: 'smooth' });
         break;
-      case 'services1':
+      case 'accounting-services':
         window.scrollTo({ top: this.servicesSection.current.offsetTop - serviceOffset, behavior: 'smooth' });
-        break;
-      case 'services2':
-        window.scrollTo({ top: this.servicesSection.current.offsetTop + 250, behavior: 'smooth' });
-        break;
-      case 'services3':
-        window.scrollTo({ top: this.servicesSection.current.offsetTop + 755, behavior: 'smooth' });
-        break;
-      case 'services4':
-        window.scrollTo({ top: this.servicesSection.current.offsetTop + 1520, behavior: 'smooth' });
         break;
       case 'contact':
         window.scrollTo({ top: this.contactSection.current.offsetTop - offset, behavior: 'smooth' });

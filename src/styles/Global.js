@@ -4,6 +4,8 @@ import '../fonts/SourceSansPro-Regular.ttf';
 import '../fonts/SourceSansPro-Bold.ttf';
 import { mq } from '../breakpoints';
 
+import { sizes } from './constants';
+
 const GlobalStyles = createGlobalStyle`
     *,
     *::after,
@@ -28,7 +30,7 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Nunito', sans-serif;
         ${mq({
-    fontSize: ['1.5rem', '1.5rem', '2.5rem', '2.5rem',]
+    fontSize: ['1.5rem', '1.5rem', `${sizes.H1_FONT_SIZE_DESKTOP}`, `${sizes.H1_FONT_SIZE_DESKTOP}`]
 })};
     }
 

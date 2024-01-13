@@ -7,6 +7,8 @@ import Brand from './Brand';
 import Burgermenu from './BurgerMemu';
 import CollapseMenu from './CollapseMenu';
 
+import { sizes } from '../../styles/constants';
+
 const NavBar = (props) => {
     const { goTo } = props
 
@@ -26,17 +28,8 @@ const NavBar = (props) => {
 
         return (
             <Menu>
-                <MenuItem onClick={() => goTo('services1')}>
-                    <MenuLink>Ryczałt od przychodów ewidencjonalnych</MenuLink>
-                </MenuItem>
-                <MenuItem onClick={() => goTo('services2')}>
-                    <MenuLink>Podatkowa książka przychodów i rozchodów</MenuLink>
-                </MenuItem>
-                <MenuItem onClick={() => goTo('services3')}>
-                    <MenuLink>Księgi handlowe</MenuLink>
-                </MenuItem>
-                <MenuItem>
-                    <MenuLink onClick={() => goTo('services4')}>Kadry i płace</MenuLink>
+                <MenuItem onClick={() => goTo('accounting-services')}>
+                    <MenuLink>Usługi księgowe</MenuLink>
                 </MenuItem>
             </Menu>
         );
@@ -134,7 +127,12 @@ const FlexContainer = styled('div')`
     marginRight: ['24px', '24px', '48px', '48px', '354px', '666px'],
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: ['9rem', '9rem', '6.5rem', '6.5rem'],
+    height: [
+        `${sizes.NAVBAR_HEIGHT_MOBILE}`, 
+        `${sizes.NAVBAR_HEIGHT_MOBILE}`, 
+        `${sizes.NAVBAR_HEIGHT_DESKTOP}`, 
+        `${sizes.NAVBAR_HEIGHT_DESKTOP}`
+    ],
 })};
 `;
 
