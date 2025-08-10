@@ -15,7 +15,3 @@ export const colors = {
     CONTRAST_BLUE: '#1A3F82',
     BACKGROUND_GREY: '#f8f8f8'
 }
-
-export const strings = {
-    SCANYE_URL: "https://scanye.pl/"
-}

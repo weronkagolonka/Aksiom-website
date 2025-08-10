@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import katowice from '../../images/katowice.jpg';
 import scanye from '../../images/scanye.png';
 import { mq } from '../../breakpoints';
-import { useSpring, animated, config } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
+import { config } from '../../config';
 
-import { sizes, strings } from '../../styles/constants';
+import { sizes } from '../../styles/constants';
 
 const Slideshow = () => {
     const slideAnimation = useSpring({
@@ -25,7 +26,7 @@ const Slideshow = () => {
                 <HeroText>USŁUGI</HeroText>
                 <HeroText>KSIĘGOWE.</HeroText>
                 <p style={{marginTop: '24px'}}>Lokalnie. Na Śląsku.</p>
-                <ActionButton href={strings.SCANYE_URL} target='blank'>
+                <ActionButton href={config.scanyeUrl} target='blank'>
                     <img src={scanye} style={{'height': '100px'}} alt='scanye' />
                 </ActionButton>
             </TextBox>
@@ -57,6 +58,7 @@ const HeroBanner = styled(animated.div)`
         `${sizes.NAVBAR_HEIGHT_DESKTOP}`, 
         `${sizes.NAVBAR_HEIGHT_DESKTOP}`
     ],
+    marginRight: ['0', '0', '0', '0', '300px'],
     display: 'flex',
     flexDirection: ['column', 'column', 'column', 'row'],
 })};
@@ -67,6 +69,7 @@ const HeroBannerImage = styled('div')`
     background-image: url(${katowice});
     background-size: cover;
     flex: 2;
+    background-position: left;
 `;
 
 const TextBox = styled('div')`

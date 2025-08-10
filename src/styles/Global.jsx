@@ -23,7 +23,6 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Nunito', sans-serif;
         height: 100%;
-        width: 100%;
     }
 
     h1 {
