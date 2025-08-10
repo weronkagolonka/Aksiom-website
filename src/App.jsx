@@ -6,7 +6,7 @@ import Info from './components/Info';
 import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import Footer from './components/Footer';
 import Awards from "./components/Awards";
 class App extends Component {
@@ -51,7 +51,7 @@ class App extends Component {
         feedback: this.state.message
       }
 
-      emailjs.send("smtp_server", process.env.REACT_APP_EMAIL_TEMPLATE_ID, templateParams, process.env.REACT_APP_EMAIL_USER_ID).then(
+      emailjs.send("smtp_server", import.meta.env.VITE_EMAIL_TEMPLATE_ID, templateParams, import.meta.env.VITE_EMAIL_USER_ID).then(
         (result) => {
           console.log(result.text);
         }, (error) => {
