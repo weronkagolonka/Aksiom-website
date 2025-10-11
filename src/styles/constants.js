@@ -13,5 +13,6 @@ export const sizes = {
 export const colors = {
     MAIN_YELLOW: '#D5992E',
     CONTRAST_BLUE: '#1A3F82',
-    BACKGROUND_GREY: '#f8f8f8'
+    BACKGROUND_GREY: '#f8f8f8',
+    ALIOR_PURPLE: '#7A1441'
 }

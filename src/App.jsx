@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import emailjs from '@emailjs/browser';
 import Footer from './components/Footer';
 import Awards from "./components/Awards";
+import { AffiliationPopup } from "./components/AffiliationPopup";
 class App extends Component {
 
   constructor(props) {
@@ -104,6 +105,7 @@ class App extends Component {
 
     return (
       <>
+        <AffiliationPopup />
         <NavBar goTo={this.scrollToContent} navbarState={this.state.navbarOpen} handleNavbar={this.handleNavbar} />
         <Slideshow />
         <Info />
