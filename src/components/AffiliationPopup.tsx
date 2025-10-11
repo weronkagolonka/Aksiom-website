@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import React, { Ref, useEffect, useState } from "react";
 import { colors, sizes } from "../styles/constants";
+import { config } from "../config";
+import { mq } from "../breakpoints";
 
 function onClickOutside(ref: React.RefObject<any>, onClickOutside: () => void) {
   useEffect(() => {
@@ -33,17 +35,54 @@ export const AffiliationPopup = () => {
 
     if (showPopup) {
         return (
-            <PopUpContainer className="popup-container">
+            <PopUpContainer>
                 <PopUp ref={wrapperRef}>
                     <h2>Popup Content</h2>
                     <p>This is the content of the popup.</p>
-                    <button onClick={() => setShowPopup(false)}>Close</button>
+                    <ButtonContainer>
+                        <ActionButton onClick={() => window.open(config.collaboration.iKontoBiznes, "_blank")}>
+                            Załóż iKontoBiznes
+                        </ActionButton>
+                        <ActionButton onClick={() => window.open(config.collaboration.biznesKredyt, "_blank")}>
+                            Weź BiznesKredyt
+                        </ActionButton>
+                        <CloseButton onClick={() => setShowPopup(false)}>Nie teraz</CloseButton>
+                    </ButtonContainer>
                 </PopUp>
             </PopUpContainer>
         )
     }
     return null;
 }
+
+const ButtonContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 48px;
+`
+
+const ActionButton = styled.button`
+    color: white;
+    background: ${colors.MAIN_YELLOW};
+    border: 2px solid ${colors.MAIN_YELLOW};
+    border-radius: ${sizes.BORDER_RADIUS};
+    padding: 0 48px;
+    ${mq({
+        fontSize: ['0.5rem', '0.5rem', '1.5rem', '1.5rem']
+    })}
+`
+
+const CloseButton = styled.button`
+    color: ${colors.MAIN_YELLOW};
+    background: none;
+    border: 2px solid ${colors.MAIN_YELLOW};
+    border-radius: ${sizes.BORDER_RADIUS};
+    padding: 0 48px;
+     ${mq({
+        fontSize: ['0.5rem', '0.5rem', '1.5rem', '1.5rem']
+    })}
+`
 
 const PopUpContainer = styled.div`
     backdrop-filter: blur(5px);
@@ -60,8 +99,10 @@ const PopUpContainer = styled.div`
 `
 
 const PopUp = styled.div`
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    padding: 24px;
+    padding: 48px;
     border-radius: ${sizes.BORDER_RADIUS};
     border: 5px solid ${colors.MAIN_YELLOW};
     box-shadow: -20px 20px ${colors.MAIN_YELLOW};
