@@ -1,39 +1,29 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FaAngleDown } from 'react-icons/fa';
-import { mq } from '../../breakpoints';
+import React from "react";
+import styled from "styled-components";
+import { FaAngleDown } from "react-icons/fa";
+import { mq } from "../../breakpoints";
 import { useSpring, animated, config } from "react-spring";
-import Brand from './Brand';
-import Burgermenu from './BurgerMemu';
-import CollapseMenu from './CollapseMenu';
+import Brand from "./Brand";
+import Burgermenu from "./BurgerMemu";
+import CollapseMenu from "./CollapseMenu";
 
-import { sizes } from '../../styles/constants';
+import { sizes } from "../../styles/constants";
+import { sections } from "../../constants";
 
 const NavBar = (props) => {
-    const { goTo } = props
+    const { goTo } = props;
 
     const barAnimation = useSpring({
-        from: { transform: 'translate3d(0, -10rem, 0)' },
-        transform: 'translate3d(0, 0, 0)',
+        from: { transform: "translate3d(0, -10rem, 0)" },
+        transform: "translate3d(0, 0, 0)",
     });
 
     const linkAnimation = useSpring({
-        from: { transform: 'translate3d(0, 30px, 0)', opacity: 0 },
-        to: { transform: 'translate3d(0, 0, 0)', opacity: 1 },
+        from: { transform: "translate3d(0, 30px, 0)", opacity: 0 },
+        to: { transform: "translate3d(0, 0, 0)", opacity: 1 },
         delay: 800,
         config: config.wobbly,
     });
-
-    const HooverMenu = () => {
-
-        return (
-            <Menu>
-                <MenuItem onClick={() => goTo('accounting-services')}>
-                    <MenuLink>Usługi księgowe</MenuLink>
-                </MenuItem>
-            </Menu>
-        );
-    }
 
     return (
         <>
@@ -42,18 +32,29 @@ const NavBar = (props) => {
                     <Brand />
                     <NavLinks style={linkAnimation}>
                         <NavItem>
-                            <NLink>oferta <FaAngleDown /></NLink>
-                            <HooverMenu />
+                            <NLink onClick={() => goTo(sections.ABOUT)}>
+                                o nas
+                            </NLink>
                         </NavItem>
                         <NavItem>
-                            <NLink onClick={() => goTo('about')}>o nas</NLink>
+                            <NLink onClick={() => goTo(sections.SERVICES)}>
+                                oferta
+                            </NLink>
                         </NavItem>
                         <NavItem>
-                            <NLink onClick={() => goTo('contact')}>kontakt</NLink>
+                            <NLink onClick={() => goTo(sections.BANK_PRODUCTS)}>
+                                usługi bankowe
+                            </NLink>
+                        </NavItem>
+                        <NavItem>
+                            <NLink onClick={() => goTo(sections.CONTACT)}>
+                                kontakt
+                            </NLink>
                         </NavItem>
                     </NavLinks>
                     <BurgerWrapper>
-                        <Burgermenu navbarState={props.navbarState}
+                        <Burgermenu
+                            navbarState={props.navbarState}
                             handleNavbar={props.handleNavbar}
                         />
                     </BurgerWrapper>
@@ -64,16 +65,13 @@ const NavBar = (props) => {
                 handleNavbar={props.handleNavbar}
                 move={props.goTo}
             />
-
         </>
     );
-}
+};
 
+export default NavBar;
 
-
-export default NavBar
-
-const Menu = styled('ul')`
+const Menu = styled("ul")`
     list-style-type: none;
     display: none;
     position: absolute;
@@ -84,8 +82,8 @@ const Menu = styled('ul')`
     padding-top: 25px;
     padding-bottom: 10px;
     border-radius: 25px;
-    border: 3px solid #D5992E;
-    box-shadow: -10px 10px #D5992E;
+    border: 3px solid #d5992e;
+    box-shadow: -10px 10px #d5992e;
 `;
 
 const MenuLink = styled.a`
@@ -93,7 +91,7 @@ const MenuLink = styled.a`
     color: #000;
     text-decoration: none;
     border: none;
-    font-family: 'Source Sans Pro';
+    font-family: "Source Sans Pro";
     font-weight: normal;
     text-transform: none;
 `;
@@ -107,44 +105,43 @@ const MenuItem = styled.li`
     }
 `;
 
-
 const Navbar = styled(animated.nav)`
     ${mq({
-    position: 'fixed',
-    width: '100%',
-    top: '0',
-    left: '0',
-    background: '#fff',
-    zIndex: '1',
-    fontSize: ['0.5rem', '0.5rem', '1rem', '1rem'],
-})};
+        position: "fixed",
+        width: "100%",
+        top: "0",
+        left: "0",
+        background: "#fff",
+        zIndex: "1",
+        fontSize: ["0.5rem", "0.5rem", "1rem", "1rem"],
+    })};
 `;
 
-const FlexContainer = styled('div')`
+const FlexContainer = styled("div")`
     ${mq({
-    display: 'flex',
-    marginLeft: ['24px', '24px', '48px', '48px', '354px', '666px'],
-    marginRight: ['24px', '24px', '48px', '48px', '354px', '666px'],
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    height: [
-        `${sizes.NAVBAR_HEIGHT_MOBILE}`, 
-        `${sizes.NAVBAR_HEIGHT_MOBILE}`, 
-        `${sizes.NAVBAR_HEIGHT_DESKTOP}`, 
-        `${sizes.NAVBAR_HEIGHT_DESKTOP}`
-    ],
-})};
+        display: "flex",
+        marginLeft: ["24px", "24px", "48px", "48px", "354px", "666px"],
+        marginRight: ["24px", "24px", "48px", "48px", "354px", "666px"],
+        justifyContent: "space-between",
+        alignItems: "center",
+        height: [
+            `${sizes.NAVBAR_HEIGHT_MOBILE}`,
+            `${sizes.NAVBAR_HEIGHT_MOBILE}`,
+            `${sizes.NAVBAR_HEIGHT_DESKTOP}`,
+            `${sizes.NAVBAR_HEIGHT_DESKTOP}`,
+        ],
+    })};
 `;
 
 const NavLinks = styled(animated.ul)`
     ${mq({
-    display: 'flex',
-    height: ['40%', '40%', '100%', '100%'],
-    justifySelf: 'end',
-    alignItems: 'center',
-    listStyleType: 'none',
-    margin: 'auto 0',
-})};
+        display: "flex",
+        height: ["40%", "40%", "100%", "100%"],
+        justifySelf: "end",
+        alignItems: "center",
+        listStyleType: "none",
+        margin: "auto 0",
+    })};
     @media (max-width: 768px) {
         display: none;
     }
@@ -155,34 +152,30 @@ const NLink = styled.a`
     text-decoration: none;
 `;
 
-const NavItem = styled('li')`
+const NavItem = styled("li")`
     ${mq({
-    height: ['40%', '40%', '80%', '100%'],
-    textTransform: 'uppercase',
-    fontWeight: '700',
-    border: 'none',
-    transition: 'all 300ms linear 0s',
-    cursor: 'pointer',
-    display: 'inline-block',
-    paddingTop: ['0.35rem', '0.35rem', '2.5rem', '2.5rem'],
-    paddingLeft: ['0.25rem', '0.25rem', '3rem', '3rem'],
-})};
+        height: ["40%", "40%", "80%", "100%"],
+        textTransform: "uppercase",
+        fontWeight: "700",
+        border: "none",
+        transition: "all 300ms linear 0s",
+        cursor: "pointer",
+        display: "inline-block",
+        paddingTop: ["0.35rem", "0.35rem", "2.5rem", "2.5rem"],
+        paddingLeft: ["0.25rem", "0.25rem", "3rem", "3rem"],
+    })};
     &:hover ${Menu} {
         display: block;
     }
     &:hover ${NLink} {
-        color: #D5992E;
+        color: #d5992e;
     }
 `;
 
 const BurgerWrapper = styled.div`
-  margin: auto 0;
+    margin: auto 0;
 
-  @media (min-width: 769px) {
-    display: none;
-  }
-  `;
-
-
-
-
+    @media (min-width: 769px) {
+        display: none;
+    }
+`;
