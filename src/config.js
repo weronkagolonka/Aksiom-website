@@ -9,9 +9,7 @@ export const config = {
             "https://hyz55cp0xvjcwqll.public.blob.vercel-storage.com/bank-affiliation/Bizneskredyt%20-%20onepager.pdf",
         accountOfferUrl:
             "https://hyz55cp0xvjcwqll.public.blob.vercel-storage.com/bank-affiliation/iKonto%20Biznes%20Bonus%20Afiliacyjny%20edycja%20III%20-%20onepager.pdf",
-        accountApplicationUrl:
-            "https://wniosek-rachunek-firmowy.aliorbank.pl/contact-data?partnerId=AFKB_IKB_NEW&OFF=BKB73401wdM0&pCode=BONUSAB&applicationId=BR10012",
-        loanApplicationUrl:
-            "https://wniosek-kredyt-firmowy.aliorbank.pl/lp/index.html?content=1913&partnerID=AFKB_KMI&OFF=BKB73401wdM0&applicationId=BR10012",
+        accountApplicationUrl: import.meta.env.VITE_ACCOUNT_APPLICATION_URL,
+        loanApplicationUrl: import.meta.env.VITE_LOAN_APPLICATION_URL,
     },
 };
