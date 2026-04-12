@@ -92,7 +92,7 @@ const BankOffer = styled.div`
 const Products = styled.div`
     display: flex;
     ${mq({
-        flexDirection: ["column", "column", "row", "row"],
+        flexDirection: ["column", "column", "column", "row", "row"],
         gap: ["2rem", "2rem", "3rem", "3rem"],
     })}
 `;

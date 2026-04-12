@@ -93,8 +93,8 @@ const Employee = styled.div`
 
 const PicContainer = styled.div`
     ${mq({
-        height: ["120px", "120px", "240px", "240px"],
-        width: ["40%", "40%", "40%", "20%"],
+        height: ["180px", "180px", "240px", "240px"],
+        width: ["120px", "120px", "160px", "160px"],
     })};
     background-image: url(${(props) => props.picture});
     background-size: cover;
