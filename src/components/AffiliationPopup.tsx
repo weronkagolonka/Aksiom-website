@@ -3,19 +3,21 @@ import React, { Ref, useEffect, useState } from "react";
 import { colors, sizes } from "../styles/constants";
 import { config } from "../config";
 import { mq } from "../breakpoints";
+import BankLogo from "../assets/alior-logo.svg";
+import { IconBase } from "react-icons";
 
 function onClickOutside(ref: React.RefObject<any>, onClickOutside: () => void) {
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        onClickOutside();
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [ref]);
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (ref.current && !ref.current.contains(event.target)) {
+                onClickOutside();
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [ref]);
 }
 
 export const AffiliationPopup = () => {
@@ -37,52 +39,89 @@ export const AffiliationPopup = () => {
         return (
             <PopUpContainer>
                 <PopUp ref={wrapperRef}>
-                    <h2>Popup Content</h2>
-                    <p>This is the content of the popup.</p>
+                    <Logo src={BankLogo} />
+
+                    <h2>Szukasz oferty bankowej dla swojej firmy?</h2>
+                    <p>
+                        Biuro Rachunkowe Aksiom współpracuje z Alior Bank,
+                        oferując swoim klientom korzystne warunki na wybrane
+                        produkty:
+                    </p>
+
                     <ButtonContainer>
-                        <ActionButton onClick={() => window.open(config.collaboration.iKontoBiznes, "_blank")}>
+                        <ActionButton
+                            onClick={() =>
+                                window.open(
+                                    config.aliorAfilliation.iKontoBiznes,
+                                    "_blank"
+                                )
+                            }
+                        >
                             Załóż iKontoBiznes
                         </ActionButton>
-                        <ActionButton onClick={() => window.open(config.collaboration.biznesKredyt, "_blank")}>
+                        <ActionButton
+                            onClick={() =>
+                                window.open(
+                                    config.aliorAfilliation.biznesKredyt,
+                                    "_blank"
+                                )
+                            }
+                        >
                             Weź BiznesKredyt
                         </ActionButton>
-                        <CloseButton onClick={() => setShowPopup(false)}>Nie teraz</CloseButton>
+                        <CloseButton onClick={() => setShowPopup(false)}>
+                            Nie teraz
+                        </CloseButton>
                     </ButtonContainer>
                 </PopUp>
             </PopUpContainer>
-        )
+        );
     }
     return null;
-}
+};
+
+const Logo = styled.img`
+    margin-right: auto;
+    ${mq({
+        height: ["42.5px", "42.5px", "85px", "85px"],
+    })};
+`;
 
 const ButtonContainer = styled.div`
+    margin-top: 0.25rem;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-top: 48px;
-`
+    gap: 1rem;
+    width: 100%;
+`;
 
 const ActionButton = styled.button`
     color: white;
-    background: ${colors.MAIN_YELLOW};
-    border: 2px solid ${colors.MAIN_YELLOW};
+    background: ${colors.ALIOR.PURPLE};
+    border: 2px solid ${colors.ALIOR.PURPLE};
     border-radius: ${sizes.BORDER_RADIUS};
-    padding: 0 48px;
+    padding: 0.25rem 2rem;
     ${mq({
-        fontSize: ['0.5rem', '0.5rem', '1.5rem', '1.5rem']
-    })}
-`
+        fontSize: ["0.75rem", "0.75rem", "1.5rem", "1.5rem"],
+    })};
+    &:hover {
+        cursor: pointer;
+    }
+`;
 
 const CloseButton = styled.button`
-    color: ${colors.MAIN_YELLOW};
+    color: ${colors.ALIOR.PURPLE};
     background: none;
-    border: 2px solid ${colors.MAIN_YELLOW};
+    border: 2px solid ${colors.ALIOR.PURPLE};
     border-radius: ${sizes.BORDER_RADIUS};
-    padding: 0 48px;
-     ${mq({
-        fontSize: ['0.5rem', '0.5rem', '1.5rem', '1.5rem']
-    })}
-`
+    padding: 0.25rem 2rem;
+    ${mq({
+        fontSize: ["0.75rem", "0.75rem", "1.5rem", "1.5rem"],
+    })};
+    &:hover {
+        cursor: pointer;
+    }
+`;
 
 const PopUpContainer = styled.div`
     backdrop-filter: blur(5px);
@@ -96,14 +135,21 @@ const PopUpContainer = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 1000;
-`
+`;
 
 const PopUp = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: white;
-    padding: 48px;
+    padding: 2.5rem;
     border-radius: ${sizes.BORDER_RADIUS};
-    border: 5px solid ${colors.MAIN_YELLOW};
-    box-shadow: -20px 20px ${colors.MAIN_YELLOW};
-`
+    border: 5px solid ${colors.ALIOR.PURPLE};
+    max-width: 600px;
+    text-align: left;
+    margin: 1rem;
+    ${mq({
+        gap: ["1rem", "1rem", "1.5rem", "1.5rem"],
+        padding: ["1.25rem", "1.25rem", "2.5rem", "2.5rem"],
+    })};
+`;
