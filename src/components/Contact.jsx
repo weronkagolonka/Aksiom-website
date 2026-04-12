@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { mq } from "../breakpoints";
 import { config } from "../config";
+import { colors } from "../styles/constants";
 
 const Contact = React.forwardRef((props, ref) => {
     const { submit, setName, setEmail, setMessage, state } = props;
@@ -73,7 +74,7 @@ const MainBox = styled.div`
         paddingLeft: ["24px", "24px", "48px", "48px", "354px", "666px"],
         paddingRight: ["24px", "24px", "48px", "48px", "354px", "666px"],
     })}
-    background-color: #fff;
+    background-color: ${colors.BACKGROUND_GREY};
     width: 100%;
 `;
 

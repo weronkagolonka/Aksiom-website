@@ -1,10 +1,8 @@
 import styled from "styled-components";
 import React, { Ref, useEffect, useState } from "react";
 import { colors, sizes } from "../styles/constants";
-import { config } from "../config";
 import { mq } from "../breakpoints";
-import BankLogo from "../assets/alior-logo.svg";
-import { IconBase } from "react-icons";
+import { sections } from "../constants";
 
 function onClickOutside(ref: React.RefObject<any>, onClickOutside: () => void) {
     useEffect(() => {
@@ -20,7 +18,9 @@ function onClickOutside(ref: React.RefObject<any>, onClickOutside: () => void) {
     }, [ref]);
 }
 
-export const AffiliationPopup = () => {
+export const AffiliationPopup = (props) => {
+    const { goTo } = props;
+
     const wrapperRef = React.useRef(null);
     const [showPopup, setShowPopup] = useState(false);
     const delayInSeconds = 1.25;
@@ -39,35 +39,21 @@ export const AffiliationPopup = () => {
         return (
             <PopUpContainer>
                 <PopUp ref={wrapperRef}>
-                    <Logo src={BankLogo} />
-
                     <h2>Szukasz oferty bankowej dla swojej firmy?</h2>
                     <p>
                         Biuro Rachunkowe Aksiom współpracuje z Alior Bank,
                         oferując swoim klientom korzystne warunki na wybrane
-                        produkty:
+                        produkty.
                     </p>
 
                     <ButtonContainer>
                         <ActionButton
-                            onClick={() =>
-                                window.open(
-                                    config.aliorAfilliation.iKontoBiznes,
-                                    "_blank"
-                                )
-                            }
+                            onClick={() => {
+                                goTo(sections.BANK_PRODUCTS);
+                                setShowPopup(false);
+                            }}
                         >
-                            Załóż iKontoBiznes
-                        </ActionButton>
-                        <ActionButton
-                            onClick={() =>
-                                window.open(
-                                    config.aliorAfilliation.biznesKredyt,
-                                    "_blank"
-                                )
-                            }
-                        >
-                            Weź BiznesKredyt
+                            Sprawdź ofertę
                         </ActionButton>
                         <CloseButton onClick={() => setShowPopup(false)}>
                             Nie teraz
@@ -79,13 +65,6 @@ export const AffiliationPopup = () => {
     }
     return null;
 };
-
-const Logo = styled.img`
-    margin-right: auto;
-    ${mq({
-        height: ["42.5px", "42.5px", "85px", "85px"],
-    })};
-`;
 
 const ButtonContainer = styled.div`
     margin-top: 0.25rem;
